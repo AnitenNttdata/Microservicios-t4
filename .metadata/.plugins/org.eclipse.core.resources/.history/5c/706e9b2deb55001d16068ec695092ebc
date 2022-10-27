@@ -1,0 +1,11 @@
+package com.nttdata.bootcamp.microservicet4weblux;
+
+public class Subscriber {
+
+	public static void print(Integer n) {
+
+		System.out.println("Subscriber 1: " + n);
+
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.nttdata.bootcamp;
+
+import java.util.List;
+
+public class ListImp {
+	
+	List<Integer> numeros = List.of(11, 8, 9, 15, 39, 1, 4, 83);
+	
+	int contador = 0;
+
+	for (int numero: numeros) {
+		if(numero > 10){
+			contador ++;
+		}
+	}
+
+	System.out.println(contador);
+
+}

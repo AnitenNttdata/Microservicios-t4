@@ -1,0 +1,86 @@
+package com.nttdata.bootcamp;
+
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
+
+/**
+ * Hello world!
+ *
+ */
+public class App {
+    
+	public static void main( String[] args ){
+    	
+		// Observable envía mensaje
+    	Observable<String> messageSender = Observable.just("Mi mensaje1","Mi mensaje1","Mi mensaje1");
+    	
+    	// Crear Observador1
+    	messageSender.subscribe(new Observer<Object>() {
+
+			@Override
+			public void onSubscribe(Disposable d) {
+				// TODO Auto-generated method stub
+				System.out.println("Observer1.Subscribed.");
+				
+			}
+
+			@Override
+			public void onNext(Object t) {
+				// TODO Auto-generated method stub
+				System.out.println("Observer1.Received" + t);
+
+			}
+
+			@Override
+			public void onError(Throwable e) {
+				// TODO Auto-generated method stub
+				System.out.println("Observer1.Error:" + e.getMessage());
+
+			}
+
+			@Override
+			public void onComplete() {
+				// TODO Auto-generated method stub
+				System.out.println("Observer1.Competed");
+
+			}
+    		
+    	});
+    	
+    	// Crear Observador2
+    	messageSender.subscribe(new Observer<Object>() {
+
+			@Override
+			public void onSubscribe(Disposable d) {
+				// TODO Auto-generated method stub
+				System.out.println("Observer2.Subscribed.");
+				
+			}
+
+			@Override
+			public void onNext(Object t) {
+				// TODO Auto-generated method stub
+				System.out.println("Observer2.Received" + t);
+
+			}
+
+			@Override
+			public void onError(Throwable e) {
+				// TODO Auto-generated method stub
+				System.out.println("Observer2.Error:" + e.getMessage());
+
+			}
+
+			@Override
+			public void onComplete() {
+				// TODO Auto-generated method stub
+				System.out.println("Observer2.Competed");
+
+			}
+    		
+    	});
+    	
+       
+    }
+}

@@ -1,0 +1,29 @@
+package com.nttdata.bootcamp.microserviceWebFlux.controller;
+
+import java.time.Duration;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.nttdata.bootcamp.microserviceWebFlux.modelo.Person;
+
+import reactor.core.publisher.Flux;
+
+@RestController
+public class PersonController {
+	
+	@GetMapping("/person-list-1")
+	public Flux<Person>personList1(){
+		Person p1 = new Person("Ana","Abad", 25);
+		Flux<Person> fluxp1 =Flux.just(p1).delayElements(Duration.ofSeconds(5));
+		
+		return fluxp1;
+		
+	}
+	
+	
+	
+	
+	
+
+}

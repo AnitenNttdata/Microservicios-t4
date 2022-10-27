@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;microservice-WebFlux/src/main/resources/templates/peronList.html&apos; to &apos;personList.html&apos;" description="Rename resource &apos;peronList.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/templates/peronList.html" name="personList.html" stamp="1666874834816" updateReferences="true"/>
+</session>

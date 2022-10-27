@@ -1,0 +1,23 @@
+package com.nttdata.bootcamp.microserviceWebFlux.service;
+
+import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
+
+import com.nttdata.bootcamp.microserviceWebFlux.modelo.Person;
+
+import reactor.core.publisher.Flux;
+
+@Service
+public class PersonService {
+	
+	public Flux<Person>allPersons(){
+		Flux<Person> person1= WebClient.create("http://http://localhost:8181/person-list-1").get().retrieve().bodyToFlux(Person.class);
+		Flux<Person> person2= WebClient.create("http://http://localhost:8181/person-list-2").get().retrieve().bodyToFlux(Person.class);
+		Flux<Person> person3= WebClient.create("http://http://localhost:8181/person-list-3").get().retrieve().bodyToFlux(Person.class);
+		Flux<Person> person4= WebClient.create("http://http://localhost:8181/person-list-4").get().retrieve().bodyToFlux(Person.class);
+		
+		Flux<Person>allFlux = Flux.merge(person1, person2, person3, person4);
+		return allFlux;
+	}
+
+}
